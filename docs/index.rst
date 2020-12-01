@@ -15,9 +15,10 @@ Contents:
    transaction-fee
 
 .. toctree::
-    :maxdepth: 2
-    :caption: API Reference
+   :maxdepth: 2
+   :caption: API Reference
 
-    burnweb
-    burnweb-token
-    burnweb-kvs
+   burnweb
+   burnweb-network
+   burnweb-token
+   burnweb-kvs

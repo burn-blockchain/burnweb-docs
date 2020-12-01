@@ -21,7 +21,11 @@ Install burnweb
 
 .. code-block:: javascript
 
+    // For js
     var BurnWeb = require('burnweb');
+    
+    // For ts
+    import BurnWeb from 'burnweb';;
 
     // Set BURN endpoint URL to initialize
     var burnweb = new BurnWeb('http://localhost:8545');
