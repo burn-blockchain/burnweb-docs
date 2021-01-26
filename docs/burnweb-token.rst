@@ -168,12 +168,12 @@ Example
 
 ------------------------------------------------------------------------------
 
-transferBalance
+transferToken
 =====================
 
 .. code-block:: javascript
 
-    burnweb.transferBalance(tokenId, to, amount [, callback])
+    burnweb.transferToken(tokenId, to, amount [, callback])
 
 Transfer token to another address.
 
@@ -198,7 +198,7 @@ Example
 
 .. code-block:: javascript
 
-    burnweb.transferBalance("0x97bcc3f68dbcae2382308c46a59b76fa2f8116f8", "0xa2710da45f1343c9ee2f88d0e64ea0c8aaadfeff", "20000")
+    burnweb.transferToken("0x97bcc3f68dbcae2382308c46a59b76fa2f8116f8", "0xa2710da45f1343c9ee2f88d0e64ea0c8aaadfeff", "20000")
     .then(console.log);
     > "0xaba239fc212acfd893282e8bca573c72d5b5c1cdf99321700f38147510a8fb6d"
 
