@@ -272,3 +272,67 @@ Example
     burnweb.burnToken("0x97BcC3F68DBcAe2382308C46A59b76fA2f8116f8", "100000000000000000000")
     .then(console.log);
     > "0xe0509cc9e9569a693e38246cffaeb3997d44167c9cc2500088505cd68abe9d23"
+
+------------------------------------------------------------------------------
+
+listTokenTransactions
+=====================
+
+.. code-block:: javascript
+
+    burnweb.listTokenTransactions(tokenId, from, to, start, end [, callback])
+
+List transactions for specified token.
+
+----------
+Parameters
+----------
+
+1. ``String`` - The token ID.
+2. ``String`` - (optional) Token sender
+3. ``String`` - (optional) Token receiver
+4. ``String`` - DateTime range start (e.g. "2021-02-15 07:52:37")
+5. ``String`` - DateTime range end (e.g. "2025-02-15 01:00:00")
+6. ``Function`` - (optional) Optional callback.
+
+-------
+Returns
+-------
+
+``Promise`` returns ``Object`` - The list of transaction object.
+
+  - ``tx_id`` 32 Bytes - ``String``: Hash of the transaction.
+  - ``block_number`` - ``Number``: The block number where the transaction is included.
+  - ``nonce`` - ``Number``: Unique number for the transaction.
+  - ``token_id`` - ``String``: If token transfer transaction, the token id of the transferred token.
+  - ``source`` - ``String``: If token transfer transaction, the addresss of the token sender.
+  - ``target`` - ``String``: If token transfer transaction, the addresss of the token receiver.
+  - ``amount`` - ``Number``: If token transfer transaction, the amount of token transferred.
+  - ``fee`` - ``Number``: Transaction fee deducted. See :ref:`fee <tx-fee>` for more details.
+  - ``data`` - ``String``: RLP endoded parameters. See :ref:`data <tx-data>` for more details.
+  - ``signature`` - ``String``: Transaction signature. See :ref:`signature <tx-hash-signature>` for more details.
+  - ``created`` - ``DateTime``: The transaction created date time formatted in 'YYYY-MM-DD HH:mm:ss'
+
+-------
+Example
+-------
+
+.. code-block:: javascript
+
+    burnweb.listTokenTransactions("0x0000000000000000000000000000000000000000", undefined, undefined, "2021-02-15 00:0:00", "9999-01-01 00:00:00")
+    .then(console.log);
+    > [
+        {
+          "tx_id": "0x335341f1cba6eb17b7c6cbf76d59db5a8ba4f936cd88977892c704b089f0b91a",
+          "block_number": "8898401",
+          "nonce": "388348616525703",
+          "token_id": "0x0000000000000000000000000000000000000000",
+          "source": "0x4bea9f4ebba2c63289fb257ed58df1e0e572b1e4",
+          "target": "0x93106e4f822ec69776f8fa8dfa514701308cd510",
+          "amount": "1100000000000000000",
+          "fee": "100",
+          "data": "",
+          "signature": "8422d2f46d65626f0be85788d8595135fbf4af048b1a77fa00495ff9ba17b6bc94ee66066ed5b64217c57a727f3ce833a3be2e310723b6bf4c68bb45c07e23ccf9af2f",
+          "created": "2021-02-15 07:52:46"
+        }
+      ]
