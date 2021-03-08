@@ -36,7 +36,7 @@ Transfer Token
 - If ``fee_token_id`` is not set or set to '0x0000000000000000000000000000000000000000'
   - The token sender pays gas fee, with amount GAS_TRANSFER_TOKEN to NETWORK_OWNER.
 - If ``fee_token_id`` is set other than the native token
-  - The token sender pays gas in ``fee_token_id`` token to ``Token Owner``, with amount max(transfer amount * `f`ee_rate`` / 100000, ``fee``). Also, ``Token Owner`` pays native token with amount ``GAS_TRANFER_TOKEN`` to ``NETWORK_OWNER``.
+  - The token sender pays gas in ``fee_token_id`` token to ``Token Owner``, with amount max(transfer amount * ``fee_rate`` / 100000, ``fee``). Also, ``Token Owner`` pays native token with amount ``GAS_TRANFER_TOKEN`` to ``NETWORK_OWNER``.
 
 ----------------------
 KVS related gas
