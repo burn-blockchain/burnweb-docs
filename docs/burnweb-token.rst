@@ -110,7 +110,7 @@ createToken
         symbol,
         decimals,
         totalSupply,
-        feeTokenId,
+        feeToken,
         txFee,
         txFeeRate,
         icon,
@@ -129,7 +129,7 @@ Parameters
 2. ``String`` - Token symbol.
 3. ``Number`` - Token's decimal place.
 4. ``String`` - Initial total supply of the token.
-5. ``String`` - Token ID in which this token's transaction fee is paid. See detials at :ref:`Transaction Fee <tx-fee>` 
+5. ``Number`` - 0 or 1 (0: Transaction fee is charged in the native token, 1: Transaction fee is charged in the token itself) 
 6. ``String`` - Minimum transaction fee for token transfer. See detials at :ref:`Transaction Fee <tx-fee>` 
 7. ``String`` - Transaction fee in rate to transferred token amount. See detials at :ref:`Transaction Fee <tx-fee>` 
 8. ``String`` - URL to the token icon image.
